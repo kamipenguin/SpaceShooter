@@ -44,6 +44,8 @@ public class Done_DestroyByContact : MonoBehaviour
 		else
 		{
 		    TextMeshPro textMeshPro = gameObject.GetComponentInChildren<TextMeshPro>();
+            if (textMeshPro == null)
+                Debug.Log("????");
 		    gameController.currentWords.Remove(textMeshPro.text);
 		    gameController.currentHazards.Remove(gameObject);
         }

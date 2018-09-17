@@ -60,6 +60,12 @@ public class Done_GameController : MonoBehaviour
         {
             foreach (GameObject hazard in currentHazards)
             {
+                if (hazard == null)
+                {
+                    currentHazards.Remove(hazard);
+                    continue;
+                }
+
                 TextMeshPro textMeshPro = hazard.GetComponentInChildren<TextMeshPro>();
                 if (textMeshPro.text == inputWord)
                 {
