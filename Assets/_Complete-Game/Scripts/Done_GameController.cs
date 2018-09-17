@@ -13,6 +13,7 @@ public class Done_GameController : MonoBehaviour
     public GameObject[] hazards;
     public Vector3 spawnValues;
     public int hazardCount;
+    public int maxHazardCount = 35;
     public float spawnWait;
     public float startWait;
     public float waveWait;
@@ -102,6 +103,9 @@ public class Done_GameController : MonoBehaviour
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
+
+            if (hazardCount < maxHazardCount)
+                hazardCount++;
 
             if (gameOver)
             {
