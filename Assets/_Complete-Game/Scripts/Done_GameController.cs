@@ -35,6 +35,7 @@ public class Done_GameController : MonoBehaviour
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
+        inputField.ActivateInputField();
         UpdateScore();
         StartCoroutine(SpawnWaves());
     }
@@ -66,8 +67,6 @@ public class Done_GameController : MonoBehaviour
                     break;
                 }
             }
-            currentWords.Remove(inputWord);
-            CheckWord(inputWord);
         }
     }
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 using UnityEngine.UI;
 
 public class Done_DestroyByContact : MonoBehaviour
@@ -40,9 +41,14 @@ public class Done_DestroyByContact : MonoBehaviour
 		    FindObjectOfType<InputField>().readOnly = true;
 			gameController.GameOver();
 		}
+		else
+		{
+		    TextMeshPro textMeshPro = gameObject.GetComponentInChildren<TextMeshPro>();
+		    gameController.currentWords.Remove(textMeshPro.text);
+		    gameController.currentHazards.Remove(gameObject);
+        }
 		
 		gameController.AddScore(scoreValue);
-	    gameController.currentHazards.Remove(gameObject);
 		Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
