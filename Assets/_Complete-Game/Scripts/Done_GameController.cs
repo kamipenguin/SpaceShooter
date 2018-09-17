@@ -59,7 +59,7 @@ public class Done_GameController : MonoBehaviour
         {
             foreach (GameObject hazard in currentHazards)
             {
-                TextMeshPro textMeshPro = hazard.gameObject.GetComponentInChildren<TextMeshPro>();
+                TextMeshPro textMeshPro = hazard.GetComponentInChildren<TextMeshPro>();
                 if (textMeshPro.text == inputWord)
                 {
                     playerController.Fire(hazard.transform.position);
